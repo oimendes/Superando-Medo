@@ -7,7 +7,7 @@
     --text-white: #111111;
     --text-muted: #555555;
     --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
     --border-gold-soft: rgba(212, 175, 55, 0.2);
 }
 
