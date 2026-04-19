@@ -1,14 +1,14 @@
 /* --- FUNDAMENTOS --- */
 :root {
-    --primary: #D4AF37; /* Dourado Premium */
+    --primary: #D4AF37; /* Dourado Ouro */
     --primary-hover: #B8860B;
-    --bg-dark: #fcfcfc; /* Um branco quase cinza para seções de contraste */
+    --bg-dark: #f4f4f4; /* Cinza bem claro para dar contraste com o branco */
     --bg-light: #ffffff;
-    --text-white: #111111; /* Texto quase preto para leitura perfeita */
-    --text-muted: #555555;
+    --text-white: #1a1a1a; /* Invertido para preto no tema branco */
+    --text-muted: #666666;
     --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
-    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.07); /* Sombra suave para tirar o aspecto "chapado" */
-    --border-gold-soft: rgba(212, 175, 55, 0.2);
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Sombra mais profunda para dar relevo */
+    --border-gold-soft: rgba(212, 175, 55, 0.3);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,7 +25,7 @@ body {
 /* --- HEADER --- */
 header { 
     padding: 20px 0; 
-    background: #ffffff; 
+    background: rgba(255, 255, 255, 0.95); 
     backdrop-filter: blur(10px); 
     position: sticky; top: 0; z-index: 1000; 
     border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -64,7 +64,7 @@ nav ul li a:hover { color: var(--primary); }
 
 /* --- SEÇÕES --- */
 section { padding: 80px 0; }
-.bg-dark { background-color: #f8f9fa; } /* Fundo levemente cinza para destacar as seções brancas */
+.bg-dark { background-color: var(--bg-dark); }
 .section-title { text-align: center; font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; }
 .section-subtitle { text-align: center; max-width: 700px; margin: 0 auto 50px; color: var(--text-muted); }
 
@@ -74,6 +74,7 @@ section { padding: 80px 0; }
     background: #fff; padding: 25px; border-radius: 15px; 
     display: flex; align-items: center; gap: 20px; 
     box-shadow: var(--card-shadow); 
+    border: 1px solid rgba(0,0,0,0.02);
 }
 .card-red { border-left: 5px solid #ff4d4d; }
 .card-gold { border-left: 5px solid var(--primary); }
@@ -94,7 +95,7 @@ section { padding: 80px 0; }
 .author-photo { width: 100%; border-radius: 20px; box-shadow: var(--card-shadow); }
 
 /* --- FOOTER --- */
-footer { background: #1a1a1a; color: #fff; padding: 50px 0; text-align: center; }
+footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
 
 /* --- WHATSAPP --- */
 .whatsapp-float { 
@@ -111,7 +112,7 @@ footer { background: #1a1a1a; color: #fff; padding: 50px 0; text-align: center; 
     .hero-grid, .author-grid, .ebook-grid { grid-template-columns: 1fr !important; text-align: center; }
     .hero-text h1 { font-size: 2.2rem; }
     .hero-btns { justify-content: center; }
-    .btn-primary { width: 100%; }
+    .btn-primary, .btn-secondary { width: 100%; }
 }
 
 /* --- ANIMAÇÕES E CORREÇÕES FINAIS --- */
