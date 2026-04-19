@@ -2,12 +2,12 @@
 :root {
     --primary: #D4AF37;
     --primary-hover: #B8860B;
-    --bg-dark: #f8f9fa;
+    --bg-dark: #f9f9f9;
     --bg-light: #ffffff;
-    --text-white: #1a1a1a;
-    --text-muted: #666666;
+    --text-white: #111111;
+    --text-muted: #555555;
     --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     --border-gold-soft: rgba(212, 175, 55, 0.2);
 }
 
@@ -81,7 +81,6 @@ section { padding: 80px 0; }
     display: flex; align-items: center; gap: 20px; 
     box-shadow: var(--card-shadow); 
     transition: 0.3s;
-    border: 1px solid transparent;
 }
 .unified-card:hover { transform: translateY(-5px); border-color: var(--primary); background: #fffdf0; }
 .card-red { border-left: 5px solid #ff4d4d; }
@@ -104,7 +103,7 @@ section { padding: 80px 0; }
 .new-price { font-size: 2.5rem; font-weight: 900; color: var(--primary); }
 .mentoria-bullets { list-style: none !important; padding: 0 !important; }
 
-/* --- SOBRE (CORREÇÃO DA IMAGEM IMENSA) --- */
+/* --- SOBRE --- */
 .author-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
 .author-photo { width: 100%; max-width: 350px; height: auto; border-radius: 20px; box-shadow: var(--card-shadow); display: block; margin: 0 auto; }
 
@@ -125,7 +124,7 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
 }
 .whatsapp-float img { width: 35px; }
 
-/* --- MOBILE (RESTAURADO) --- */
+/* --- MOBILE --- */
 @media (max-width: 850px) {
     nav { display: none; }
     .hero-grid, .author-grid, .ebook-grid { grid-template-columns: 1fr !important; text-align: center; }
@@ -142,7 +141,23 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
     50% { transform: scale(1.05); }
 }
 
-#duvidas, .cta-simple-box, section:last-of-type .container {
+#duvidas {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.cta-simple-box {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+section:last-of-type .container {
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
@@ -155,8 +170,11 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
     display: inline-flex !important;
 }
 
-/* --- ESTILO DO INSTAGRAM NO SOBRE --- */
-.insta-wrapper { margin-top: 25px; }
+/* --- ESTILO DO INSTAGRAM NO SOBRE (COLE NO FINAL DO ARQUIVO) --- */
+.insta-wrapper {
+    margin-top: 25px;
+}
+
 .custom-insta-link {
     display: inline-flex;
     align-items: center;
@@ -169,4 +187,9 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
     border-radius: 10px;
     transition: 0.3s;
 }
-.insta-icon { width: 20px; height: 20px; margin-right: 10px; }
+
+.insta-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
