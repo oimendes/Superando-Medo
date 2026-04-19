@@ -405,3 +405,23 @@ footer a:hover {
         order: 1; /* Texto em cima no celular */
     }
 }
+/* --- AJUSTE RESPONSIVO FOCADO NA IMAGEM DO MÉTODO --- */
+@media (max-width: 950px) { /* Use o mesmo valor de max-width que já existe no seu CSS para celular */
+    
+    /* Garante que o contêiner da imagem tenha respiro lateral no celular */
+    .metodo-image-side {
+        padding: 0 20px; /* Adiciona 20px de espaço nas laterais (esquerda e direita) */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; /* Dá um espacinho do botão acima */
+    }
+
+    /* Ajusta a imagem para respeitar o contêiner e não colar nas bordas */
+    .metodo-banner-left {
+        max-width: 100%; /* Não deixa a imagem ser maior que o contêiner com padding */
+        height: auto; /* Mantém a proporção */
+        display: block;
+        margin: 0 auto; /* Centraliza */
+    }
+}
