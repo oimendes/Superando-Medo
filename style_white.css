@@ -1,13 +1,13 @@
-/* --- FUNDAMENTOS --- */
+/* --- FUNDAMENTOS (Cores ajustadas para Branco/Ouro, sem alterar estrutura) --- */
 :root {
     --primary: #D4AF37;
     --primary-hover: #B8860B;
-    --bg-dark: #f9f9f9;
+    --bg-dark: #fcfcfc; /* Branco gelo para seções de contraste, mantendo o nome da variável */
     --bg-light: #ffffff;
-    --text-white: #111111;
-    --text-muted: #555555;
+    --text-white: #111111; /* Texto escuro para fundo branco, mantendo o nome da variável */
+    --text-muted: #666666;
     --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.07); /* Sombra suave para dar relevo */
     --border-gold-soft: rgba(212, 175, 55, 0.2);
 }
 
@@ -28,7 +28,7 @@ header {
     background: #ffffff; 
     backdrop-filter: blur(10px); 
     position: sticky; top: 0; z-index: 1000; 
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05); 
 }
 header .container { display: flex; justify-content: space-between; align-items: center; }
 .logo-text { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.5px; }
@@ -47,7 +47,7 @@ nav ul li a:hover { color: var(--primary); }
 .video-container {
     border-radius: 20px; overflow: hidden;
     box-shadow: var(--card-shadow);
-    border: 5px solid #fff;
+    border: none; /* REMOVIDA A BORDA BRANCA */
     aspect-ratio: 16 / 9; position: relative;
 }
 .video-container iframe { position: absolute; width: 100%; height: 100%; border: none; }
@@ -61,12 +61,6 @@ nav ul li a:hover { color: var(--primary); }
     box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4); }
-.btn-secondary { 
-    background: transparent; color: var(--text-white); padding: 18px 35px; 
-    border-radius: 12px; text-decoration: none; font-weight: 700; 
-    display: inline-block; transition: 0.3s; border: 2px solid var(--primary); 
-}
-.btn-secondary:hover { background: var(--primary); color: #fff; }
 
 /* --- SEÇÕES --- */
 section { padding: 80px 0; }
@@ -81,15 +75,12 @@ section { padding: 80px 0; }
     display: flex; align-items: center; gap: 20px; 
     box-shadow: var(--card-shadow); 
 }
+.unified-card:hover { transform: scale(1.02); border-color: var(--primary); } /* RESTAURADO EFEITO DE HOVER */
 .card-red { border-left: 5px solid #ff4d4d; }
 .card-gold { border-left: 5px solid var(--primary); }
 .icon { font-size: 1.4rem; }
 
-/* --- E-BOOK SECTION --- */
-.ebook-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; }
-.ebook-img { width: 100%; border-radius: 15px; box-shadow: var(--card-shadow); }
-
-/* --- MENTORIA PREMIUM --- */
+/* --- MENTORIA PREMIUM CARD --- */
 .mentoria-premium-card { 
     background: #fff; padding: 40px; border-radius: 25px; 
     text-align: center; border: 1px solid var(--border-gold-soft);
@@ -97,16 +88,21 @@ section { padding: 80px 0; }
 }
 .highlight-tag { background: var(--gold-gradient); color: #fff; padding: 5px 15px; border-radius: 50px; font-weight: 900; font-size: 0.8rem; }
 .price-container { margin: 25px 0; }
-.old-price { display: block; color: var(--text-muted); text-decoration: line-through; }
 .new-price { font-size: 2.5rem; font-weight: 900; color: var(--primary); }
 
 /* --- SOBRE --- */
 .author-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
 .author-photo { width: 100%; border-radius: 20px; box-shadow: var(--card-shadow); }
 
-/* --- FOOTER --- */
-footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
-.footer-links a { color: var(--primary); text-decoration: none; }
+/* --- FOOTER (CORREÇÃO TOTAL DAS CORES E SUBINHADO) --- */
+footer { background: #1a1a1a; color: #fff; padding: 50px 0; text-align: center; }
+footer .container { display: flex; flex-direction: column; align-items: center; }
+footer a, footer a:visited, footer a:active { 
+    color: #ffffff !important; 
+    text-decoration: underline !important; /* FORÇA O SUBLINHADO */
+    -webkit-text-fill-color: #ffffff !important;
+}
+footer a:hover { color: var(--primary) !important; }
 
 /* --- WHATSAPP --- */
 .whatsapp-float { 
@@ -117,23 +113,24 @@ footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
 }
 .whatsapp-float img { width: 35px; }
 
-/* --- MOBILE --- */
+/* --- MOBILE (RESTAURADO COMPLETO) --- */
 @media (max-width: 850px) {
     nav { display: none; }
     .hero-grid, .author-grid, .ebook-grid { grid-template-columns: 1fr !important; text-align: center; }
     .hero-text h1 { font-size: 2.2rem; }
     .hero-btns { justify-content: center; }
-    .btn-primary, .btn-secondary { width: 100%; }
+    .btn-primary { width: 100%; }
 }
 
-/* --- ANIMAÇÕES E CORREÇÕES FINAIS --- */
+/* --- ANIMAÇÕES E CORREÇÕES FINAIS (RESTAURADAS) --- */
 .pulse { animation: pulse-animation 2s infinite; }
 @keyframes pulse-animation {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
 }
 
-#duvidas {
+/* CENTRALIZAÇÃO DAS SEÇÕES FINAIS (RESTAURADO) */
+#duvidas, .cta-simple-box, section:last-of-type .container {
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
@@ -141,32 +138,20 @@ footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
     justify-content: center !important;
 }
 
-.cta-simple-box {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-section:last-of-type .container {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
+/* ALINHAMENTO DO BOTÃO WHATSAPP (RESTAURADO) */
 .btn-wa-large {
     margin: 20px auto !important;
     display: inline-flex !important;
 }
 
-/* --- ESTILO DO INSTAGRAM NO SOBRE (COLE NO FINAL DO ARQUIVO) --- */
+/* REMOÇÃO DOS 3 PONTINHOS DA MENTORIA (RESTAURADO) */
+.mentoria-bullets { list-style: none !important; padding: 0 !important; }
+.mentoria-bullets li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+
+/* ESTILO DO INSTAGRAM NO SOBRE (RESTAURADO E AJUSTADO) */
 .insta-wrapper {
     margin-top: 25px;
 }
-
 .custom-insta-link {
     display: inline-flex;
     align-items: center;
@@ -179,7 +164,6 @@ section:last-of-type .container {
     border-radius: 10px;
     transition: 0.3s;
 }
-
 .insta-icon {
     width: 20px;
     height: 20px;
