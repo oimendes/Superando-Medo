@@ -268,11 +268,6 @@ footer a:hover {
     display: inline-flex !important;
 }
 
-/* --- ESTILO DO INSTAGRAM NO SOBRE (COLE NO FINAL DO ARQUIVO) --- */
-.insta-wrapper {
-    margin-top: 25px;
-}
-
 .custom-insta-link {
     display: inline-flex;
     align-items: center;
@@ -297,7 +292,35 @@ footer a:hover {
     margin-right: 10px;
 }
 
-/* Centraliza o botão do insta apenas no celular */
+/* --- ESTILO DO SOBRE E INSTAGRAM --- */
+.insta-wrapper {
+    margin-top: 25px;
+}
+
+.custom-insta-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none !important; /* Remove o sublinhado */
+    color: #333 !important; /* Cor escura profissional */
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.05); /* Fundo sutil */
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.custom-insta-link:hover {
+    background: rgba(0,0,0,0.1);
+    color: var(--primary) !important; /* Fica dourado ao passar o mouse */
+}
+
+.insta-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
 @media (max-width: 850px) {
     .insta-wrapper {
         display: flex;
