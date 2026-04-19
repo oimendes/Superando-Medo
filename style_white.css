@@ -304,3 +304,19 @@ footer a:hover {
         justify-content: center;
     }
 }
+
+/* --- AJUSTE DE PREÇOS PARA CELULAR --- */
+@media (max-width: 850px) {
+    .new-price {
+        font-size: 2.8rem !important; /* Diminui o preço no celular */
+        letter-spacing: -1px; /* Ajusta o espaçamento para não ficar espremido */
+    }
+    
+    .old-price {
+        font-size: 1rem; /* Diminui levemente o preço riscado também */
+    }
+
+    .mentoria-premium-card, .cta-simple-box {
+        padding: 30px 20px !important; /* Diminui o respiro interno para caber melhor na tela do celular */
+    }
+}
