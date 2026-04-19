@@ -25,20 +25,37 @@ body {
 }
 .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
-/* --- HEADER --- */
+/* --- HEADER (MODO ESCURO) --- */
 header { 
     padding: 20px 0; 
-    background: #ffffff; 
+    background: #111111; /* Fundo preto sólido (ou use #000) */
     backdrop-filter: blur(10px); 
     position: sticky; top: 0; z-index: 1000; 
-    border-bottom: 1px solid #eee; 
+    border-bottom: 1px solid #333; /* Borda escura para combinar */
 }
+
 header .container { display: flex; justify-content: space-between; align-items: center; }
-.logo-text { font-size: 1.1rem; font-weight: 900; letter-spacing: -0.5px; }
-.logo-text strong { color: var(--primary); }
+
+.logo-text { 
+    font-size: 1.1rem; 
+    font-weight: 900; 
+    letter-spacing: -0.5px; 
+    color: #ffffff; /* Letras do logo em branco */
+}
+
+.logo-text strong { color: var(--primary); } /* Mantém o "DE FALAR INGLÊS" em dourado */
+
 nav ul { display: flex; list-style: none; gap: 20px; }
-nav ul li a { color: #333; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
-nav ul li a:hover { color: var(--primary); }
+
+nav ul li a { 
+    color: #ffffff; /* Palavras do menu em branco */
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    transition: 0.3s; 
+}
+
+nav ul li a:hover { color: var(--primary); } /* Mantém o efeito dourado ao passar o mouse */
 
 /* --- HERO --- */
 .hero-grid { 
@@ -176,16 +193,34 @@ section { padding: 100px 0; }
 .author-photo { width: 100%; max-width: 350px; border-radius: 20px; display: block; margin: 0 auto; border: 1px solid #eee; }
 .author-info p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; color: #333; }
 
-/* --- FOOTER (CORREÇÃO DAS LETRAS AZUIS) --- */
-footer { padding: 60px 0; background: #111; text-align: center; border-top: 1px solid #eee; }
-footer .container { display: flex; flex-direction: column; align-items: center; }
+/* --- FOOTER (CORREÇÃO DAS LETRAS AZUIS E TEXTO BRANCO) --- */
+footer { 
+    padding: 60px 0; 
+    background: #111; 
+    text-align: center; 
+    border-top: 1px solid #333; /* Mudei para um cinza escuro para não contrastar tanto com o fundo preto */
+    color: #ffffff; 
+}
+
+footer .container { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; /* Adiciona um espaço de 15px entre a frase e os links */
+}
+
 footer a, footer a:visited, footer a:active { 
     color: #ffffff !important; 
     text-decoration: underline !important; 
     -webkit-text-fill-color: #ffffff !important;
     transition: 0.3s; 
+    font-size: 0.9rem; /* Deixa os links levemente menores que o copyright, fica mais elegante */
 }
-footer a:hover { color: var(--primary) !important; }
+
+footer a:hover { 
+    color: var(--primary) !important; 
+    -webkit-text-fill-color: var(--primary) !important;
+}
 
 /* --- WHATSAPP FLUTUANTE --- */
 .whatsapp-float { 
