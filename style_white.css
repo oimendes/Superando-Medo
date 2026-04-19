@@ -2,10 +2,10 @@
 :root {
     --primary: #D4AF37;
     --primary-hover: #B8860B;
-    --bg-dark: #f9f9f9;
+    --bg-dark: #f8f9fa;
     --bg-light: #ffffff;
-    --text-white: #111111;
-    --text-muted: #555555;
+    --text-white: #1a1a1a;
+    --text-muted: #666666;
     --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     --border-gold-soft: rgba(212, 175, 55, 0.2);
@@ -83,14 +83,14 @@ section { padding: 80px 0; }
     transition: 0.3s;
     border: 1px solid transparent;
 }
-.unified-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+.unified-card:hover { transform: translateY(-5px); border-color: var(--primary); background: #fffdf0; }
 .card-red { border-left: 5px solid #ff4d4d; }
 .card-gold { border-left: 5px solid var(--primary); }
 .icon { font-size: 1.4rem; }
 
 /* --- E-BOOK SECTION --- */
 .ebook-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; }
-.ebook-img { width: 100%; border-radius: 15px; box-shadow: var(--card-shadow); }
+.ebook-img { width: 100%; max-width: 400px; margin: 0 auto; border-radius: 15px; box-shadow: var(--card-shadow); }
 
 /* --- MENTORIA PREMIUM --- */
 .mentoria-premium-card { 
@@ -104,9 +104,9 @@ section { padding: 80px 0; }
 .new-price { font-size: 2.5rem; font-weight: 900; color: var(--primary); }
 .mentoria-bullets { list-style: none !important; padding: 0 !important; }
 
-/* --- SOBRE --- */
+/* --- SOBRE (CORREÇÃO DA IMAGEM IMENSA) --- */
 .author-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
-.author-photo { width: 100%; border-radius: 20px; box-shadow: var(--card-shadow); }
+.author-photo { width: 100%; max-width: 350px; height: auto; border-radius: 20px; box-shadow: var(--card-shadow); display: block; margin: 0 auto; }
 
 /* --- FOOTER --- */
 footer { background: #111; color: #fff !important; padding: 50px 0; text-align: center; }
@@ -125,13 +125,14 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
 }
 .whatsapp-float img { width: 35px; }
 
-/* --- MOBILE --- */
+/* --- MOBILE (RESTAURADO) --- */
 @media (max-width: 850px) {
     nav { display: none; }
     .hero-grid, .author-grid, .ebook-grid { grid-template-columns: 1fr !important; text-align: center; }
     .hero-text h1 { font-size: 2.2rem; }
     .hero-btns { justify-content: center; }
     .btn-primary, .btn-secondary { width: 100%; }
+    .author-photo { max-width: 280px; }
 }
 
 /* --- ANIMAÇÕES E CORREÇÕES FINAIS --- */
@@ -141,23 +142,7 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
     50% { transform: scale(1.05); }
 }
 
-#duvidas {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.cta-simple-box {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-section:last-of-type .container {
+#duvidas, .cta-simple-box, section:last-of-type .container {
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
