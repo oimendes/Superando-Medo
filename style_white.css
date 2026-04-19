@@ -1,14 +1,14 @@
 /* --- FUNDAMENTOS --- */
 :root {
-    --primary: #D4AF37; /* Dourado Ouro */
+    --primary: #D4AF37;
     --primary-hover: #B8860B;
-    --bg-dark: #f4f4f4; /* Cinza bem claro para dar contraste com o branco */
+    --bg-dark: #f9f9f9;
     --bg-light: #ffffff;
-    --text-white: #1a1a1a; /* Invertido para preto no tema branco */
-    --text-muted: #666666;
+    --text-white: #111111;
+    --text-muted: #555555;
     --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
-    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Sombra mais profunda para dar relevo */
-    --border-gold-soft: rgba(212, 175, 55, 0.3);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --border-gold-soft: rgba(212, 175, 55, 0.2);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,7 +25,7 @@ body {
 /* --- HEADER --- */
 header { 
     padding: 20px 0; 
-    background: rgba(255, 255, 255, 0.95); 
+    background: #ffffff; 
     backdrop-filter: blur(10px); 
     position: sticky; top: 0; z-index: 1000; 
     border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -61,6 +61,12 @@ nav ul li a:hover { color: var(--primary); }
     box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4); }
+.btn-secondary { 
+    background: transparent; color: var(--text-white); padding: 18px 35px; 
+    border-radius: 12px; text-decoration: none; font-weight: 700; 
+    display: inline-block; transition: 0.3s; border: 2px solid var(--primary); 
+}
+.btn-secondary:hover { background: var(--primary); color: #fff; }
 
 /* --- SEÇÕES --- */
 section { padding: 80px 0; }
@@ -74,13 +80,16 @@ section { padding: 80px 0; }
     background: #fff; padding: 25px; border-radius: 15px; 
     display: flex; align-items: center; gap: 20px; 
     box-shadow: var(--card-shadow); 
-    border: 1px solid rgba(0,0,0,0.02);
 }
 .card-red { border-left: 5px solid #ff4d4d; }
 .card-gold { border-left: 5px solid var(--primary); }
 .icon { font-size: 1.4rem; }
 
-/* --- MENTORIA PREMIUM CARD --- */
+/* --- E-BOOK SECTION --- */
+.ebook-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; }
+.ebook-img { width: 100%; border-radius: 15px; box-shadow: var(--card-shadow); }
+
+/* --- MENTORIA PREMIUM --- */
 .mentoria-premium-card { 
     background: #fff; padding: 40px; border-radius: 25px; 
     text-align: center; border: 1px solid var(--border-gold-soft);
@@ -88,6 +97,7 @@ section { padding: 80px 0; }
 }
 .highlight-tag { background: var(--gold-gradient); color: #fff; padding: 5px 15px; border-radius: 50px; font-weight: 900; font-size: 0.8rem; }
 .price-container { margin: 25px 0; }
+.old-price { display: block; color: var(--text-muted); text-decoration: line-through; }
 .new-price { font-size: 2.5rem; font-weight: 900; color: var(--primary); }
 
 /* --- SOBRE --- */
@@ -96,6 +106,7 @@ section { padding: 80px 0; }
 
 /* --- FOOTER --- */
 footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
+.footer-links a { color: var(--primary); text-decoration: none; }
 
 /* --- WHATSAPP --- */
 .whatsapp-float { 
@@ -122,7 +133,23 @@ footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
     50% { transform: scale(1.05); }
 }
 
-#duvidas, .cta-simple-box, section:last-of-type .container {
+#duvidas {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.cta-simple-box {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+section:last-of-type .container {
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
@@ -135,7 +162,7 @@ footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
     display: inline-flex !important;
 }
 
-/* --- ESTILO DO INSTAGRAM NO SOBRE --- */
+/* --- ESTILO DO INSTAGRAM NO SOBRE (COLE NO FINAL DO ARQUIVO) --- */
 .insta-wrapper {
     margin-top: 25px;
 }
