@@ -2,19 +2,19 @@
 :root {
     --primary: #FFD700;
     --primary-hover: #D4AF37;
-    --bg-dark: #f8f8f8;
-    --bg-light: #ffffff;
-    --text-white: #111111;
-    --text-muted: #555555;
+    --bg-dark: #0b0a1a;
+    --bg-light: #1c134d;
+    --text-white: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
     --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    --border-gold-soft: rgba(212, 175, 55, 0.2);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --border-gold-soft: rgba(255, 215, 0, 0.3);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { 
-    background: var(--bg-light); 
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-light) 100%); 
     color: var(--text-white); 
     font-family: 'Inter', sans-serif; 
     line-height: 1.6;
@@ -25,102 +25,175 @@ body {
 /* --- HEADER --- */
 header { 
     padding: 20px 0; 
-    background: #ffffff; 
+    background: rgba(0,0,0,0.9); 
     backdrop-filter: blur(10px); 
     position: sticky; top: 0; z-index: 1000; 
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(255,215,0,0.2); 
 }
 header .container { display: flex; justify-content: space-between; align-items: center; }
-.logo-text { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.5px; }
+.logo-text { font-size: 1.1rem; font-weight: 900; letter-spacing: -0.5px; }
 .logo-text strong { color: var(--primary); }
 nav ul { display: flex; list-style: none; gap: 20px; }
-nav ul li a { color: var(--text-white); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+nav ul li a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
 nav ul li a:hover { color: var(--primary); }
 
-/* --- HERO SECTION --- */
-#home { padding: 100px 0; background: radial-gradient(circle at top right, #fffdf5, #ffffff); }
-.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-.hero-text h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.1; margin: 20px 0; }
-.hero-text p { font-size: 1.2rem; margin-bottom: 30px; color: var(--text-muted); }
-.badge { background: #fff5d6; color: #b8860b; border: 1px solid #f3e0a3; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 800; }
+/* --- HERO --- */
+.hero-grid { 
+    padding: 80px 0; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    align-items: center; 
+}
+.hero-text h1 { font-size: 3rem; font-weight: 900; line-height: 1.1; margin: 20px 0; color: #fff; }
+.hero-text p { font-size: 1.25rem; margin-bottom: 35px; color: var(--text-muted); }
+.hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.badge { border: 1px solid var(--primary); color: var(--primary); padding: 5px 15px; border-radius: 50px; font-size: 0.75rem; font-weight: bold; width: fit-content; }
 
 .video-container {
-    border-radius: 20px; overflow: hidden;
-    box-shadow: var(--card-shadow);
-    border: none;
-    aspect-ratio: 16 / 9; position: relative;
+    position: relative; width: 100%; max-width: 500px; margin: 0 auto;
+    aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
-.video-container iframe { position: absolute; width: 100%; height: 100%; border: none; }
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
 /* --- BOTÕES --- */
-.hero-btns { display: flex; gap: 15px; }
 .btn-primary { 
-    background: var(--gold-gradient); color: #fff; padding: 18px 35px; 
-    border-radius: 12px; text-decoration: none; font-weight: 800; 
-    display: inline-block; transition: 0.3s; border: none;
-    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    background: var(--gold-gradient); color: #000; padding: 18px 35px; 
+    border-radius: 12px; text-decoration: none; font-weight: 900; 
+    display: inline-block; transition: 0.3s; text-align: center; border: none;
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4); }
 .btn-secondary { 
-    background: transparent; color: var(--text-white); padding: 18px 35px; 
-    border-radius: 12px; text-decoration: none; font-weight: 700; 
-    display: inline-block; transition: 0.3s; border: 2px solid var(--primary); 
+    border: 2px solid var(--primary); color: var(--primary); padding: 16px 35px; 
+    border-radius: 12px; text-decoration: none; font-weight: 900; 
+    display: inline-block; transition: 0.3s; text-align: center;
 }
-.btn-secondary:hover { background: var(--primary); color: #fff; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3); }
 
-/* --- SEÇÕES --- */
-section { padding: 80px 0; }
-.bg-dark { background-color: var(--bg-dark); }
-.section-title { text-align: center; font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; }
-.section-subtitle { text-align: center; max-width: 700px; margin: 0 auto 50px; color: var(--text-muted); }
+/* --- CARDS COM ZOOM --- */
+section { padding: 100px 0; }
+.section-title { text-align: center; color: var(--primary); font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; }
+.section-subtitle { text-align: center; max-width: 800px; margin: 0 auto 50px; opacity: 0.9; color: #fff; }
 
-/* --- CARDS UNIFICADOS --- */
 .unified-column { display: flex; flex-direction: column; gap: 15px; max-width: 800px; margin: 0 auto; }
 .unified-card { 
-    background: #fff; padding: 25px; border-radius: 15px; 
-    display: flex; align-items: center; gap: 20px; 
-    box-shadow: var(--card-shadow); 
-    transition: 0.3s;
+    background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 12px; 
+    display: flex; align-items: center; gap: 20px; border: 1px solid rgba(255,255,255,0.1); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #fff;
 }
-.unified-card:hover { transform: translateY(-5px); border: 1px solid var(--primary); }
-.card-red { border-left: 5px solid #ff4d4d; }
-.card-gold { border-left: 5px solid var(--primary); }
-.icon { font-size: 1.4rem; }
+.unified-card:hover { transform: scale(1.03); background: rgba(255,255,255,0.08); border-color: var(--primary); }
 
-/* --- E-BOOK SECTION --- */
-.ebook-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; }
-.ebook-img { width: 100%; border-radius: 15px; box-shadow: var(--card-shadow); }
+.card-red { border-left: 6px solid #ff4d4d; }
+.card-gold { border-left: 6px solid var(--primary); }
 
-/* --- MENTORIA PREMIUM --- */
+/* --- CARDS PREMIUM (MÉTODO E MENTORIA) --- */
 .mentoria-premium-card { 
-    background: #fff; padding: 40px; border-radius: 25px; 
-    text-align: center; border: 1px solid var(--border-gold-soft);
-    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.1);
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    text-align: center !important; 
+    margin: 60px auto 0; 
+    padding: 40px; 
+    border: 2px solid var(--primary); 
+    border-radius: 20px; 
+    background: rgba(255, 215, 0, 0.02); 
+    width: 100%;
+    max-width: 900px;
 }
-.highlight-tag { background: var(--gold-gradient); color: #fff; padding: 5px 15px; border-radius: 50px; font-weight: 900; font-size: 0.8rem; }
+
+.highlight-tag {
+    background: var(--primary);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* --- CENTRALIZAÇÃO DEFINITIVA (DÚVIDAS) --- */
+.cta-simple-box { 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    text-align: center !important; 
+    margin: 60px auto 0; 
+    padding: 40px; 
+    border: 2px solid var(--primary); 
+    border-radius: 20px; 
+    background: rgba(255, 215, 0, 0.02); 
+    width: 100%;
+    max-width: 900px;
+}
+
+/* --- BOTÃO WHATSAPP VERDE CENTRALIZADO --- */
+.btn-wa-large { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: #25d366 !important; 
+    color: #fff !important; 
+    padding: 18px 40px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 800; 
+    margin: 25px auto 0; 
+    transition: 0.3s;
+    width: fit-content;
+}
+
+/* --- LIMPEZA DA MENTORIA (SEM PONTOS) --- */
+.mentoria-bullets { 
+    list-style: none !important; 
+    padding: 0 !important; 
+    margin: 30px auto !important; 
+}
+.mentoria-bullets li { 
+    margin-bottom: 15px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    list-style-type: none !important;
+}
+
+/* --- EBOOK E SOBRE --- */
+.ebook-grid { display: grid; gap: 50px; align-items: center; grid-template-columns: 1fr 1fr; }
+.ebook-img { width: 100%; border-radius: 20px; max-width: 400px; display: block; margin: 0 auto; }
 .price-container { margin: 25px 0; }
-.old-price { display: block; color: var(--text-muted); text-decoration: line-through; }
-.new-price { font-size: 2.5rem; font-weight: 900; color: var(--primary); }
-.mentoria-bullets { list-style: none; padding: 0; }
+.old-price { text-decoration: line-through; color: var(--text-muted); display: block; }
+.new-price { font-size: 4rem; font-weight: 900; color: var(--primary); display: block; line-height: 1; }
 
-/* --- SOBRE --- */
-.author-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
-.author-photo { width: 100%; border-radius: 20px; box-shadow: var(--card-shadow); }
+.author-section { background: #fff; color: #111; padding: 80px 0; }
+.author-grid { display: grid; grid-template-columns: 350px 1fr; gap: 60px; align-items: center; }
+.author-photo { width: 100%; max-width: 350px; border-radius: 20px; display: block; margin: 0 auto; }
+.author-info p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; color: #333; }
 
-/* --- FOOTER --- */
-footer { background: #111; color: #fff !important; padding: 50px 0; text-align: center; }
-.footer-links a, .footer-links a:visited { color: #ffffff !important; text-decoration: underline !important; margin: 0 10px; }
-
-/* --- WHATSAPP --- */
-.whatsapp-float { 
-    position: fixed; bottom: 20px; right: 20px; 
-    background: #25d366; width: 60px; height: 60px; 
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 2000;
+/* --- FOOTER (CORREÇÃO DAS LETRAS AZUIS) --- */
+footer { padding: 60px 0; background: #000; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+footer .container { display: flex; flex-direction: column; align-items: center; }
+footer a, footer a:visited, footer a:active { 
+    color: #ffffff !important; 
+    text-decoration: underline !important; 
+    -webkit-text-fill-color: #ffffff !important;
+    transition: 0.3s; 
 }
-.whatsapp-float img { width: 35px; }
+footer a:hover { color: var(--primary) !important; }
 
-/* --- MOBILE --- */
+/* --- WHATSAPP FLUTUANTE --- */
+.whatsapp-float { 
+    position: fixed; bottom: 30px; right: 30px; 
+    background-color: #25d366; width: 60px; height: 60px; 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+    z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
+}
+.whatsapp-float img { width: 32px; height: 32px; object-fit: contain; }
+
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 850px) {
     nav { display: none; }
     .hero-grid, .author-grid, .ebook-grid { grid-template-columns: 1fr !important; text-align: center; }
@@ -135,23 +208,7 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
     50% { transform: scale(1.05); }
 }
 
-#duvidas {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.cta-simple-box {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-section:last-of-type .container {
+#duvidas, .cta-simple-box, section:last-of-type .container {
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
@@ -164,7 +221,7 @@ section:last-of-type .container {
     display: inline-flex !important;
 }
 
-/* --- ESTILO DO INSTAGRAM NO SOBRE --- */
+/* --- ESTILO DO INSTAGRAM NO SOBRE (COLE NO FINAL DO ARQUIVO) --- */
 .insta-wrapper {
     margin-top: 25px;
 }
@@ -172,18 +229,31 @@ section:last-of-type .container {
 .custom-insta-link {
     display: inline-flex;
     align-items: center;
-    text-decoration: none !important; 
-    color: #333 !important; 
+    text-decoration: none !important; /* Força a retirada do sublinhado */
+    color: #333 !important; /* Força a cor escura para não ficar azul */
     font-weight: 800;
     font-size: 1rem;
     padding: 10px 20px;
-    background: rgba(0,0,0,0.05);
-    border-radius: 10px;
+    background: rgba(0,0,0,0.05); /* Fundo cinza bem clarinho */
+    border-radius: 50px;
     transition: 0.3s;
 }
 
+.custom-insta-link:hover {
+    background: rgba(0,0,0,0.1);
+    color: var(--primary) !important; /* Fica dourado quando passa o mouse */
+}
+
 .insta-icon {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     margin-right: 10px;
+}
+
+/* Centraliza o botão do insta apenas no celular */
+@media (max-width: 850px) {
+    .insta-wrapper {
+        display: flex;
+        justify-content: center;
+    }
 }
