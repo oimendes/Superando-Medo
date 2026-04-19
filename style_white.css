@@ -1,0 +1,259 @@
+/* --- FUNDAMENTOS --- */
+:root {
+    --primary: #D4AF37;
+    --primary-hover: #B8860B;
+    --bg-dark: #f9f9f9;
+    --bg-light: #ffffff;
+    --text-white: #111111;
+    --text-muted: #555555;
+    --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --border-gold-soft: rgba(212, 175, 55, 0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    background: var(--bg-light); 
+    color: var(--text-white); 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6;
+    background-attachment: fixed;
+}
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+/* --- HEADER --- */
+header { 
+    padding: 20px 0; 
+    background: #ffffff; 
+    backdrop-filter: blur(10px); 
+    position: sticky; top: 0; z-index: 1000; 
+    border-bottom: 1px solid #eee; 
+}
+header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo-text { font-size: 1.1rem; font-weight: 900; letter-spacing: -0.5px; }
+.logo-text strong { color: var(--primary); }
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul li a { color: #333; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+nav ul li a:hover { color: var(--primary); }
+
+/* --- HERO --- */
+.hero-grid { 
+    padding: 80px 0; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    align-items: center; 
+}
+.hero-text h1 { font-size: 3rem; font-weight: 900; line-height: 1.1; margin: 20px 0; color: #000; }
+.hero-text p { font-size: 1.25rem; margin-bottom: 35px; color: var(--text-muted); }
+.hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.badge { border: 1px solid var(--primary); color: var(--primary); padding: 5px 15px; border-radius: 50px; font-size: 0.75rem; font-weight: bold; width: fit-content; }
+
+.video-container {
+    position: relative; width: 100%; max-width: 500px; margin: 0 auto;
+    aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #eee;
+}
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+/* --- BOTÕES --- */
+.btn-primary { 
+    background: var(--gold-gradient); color: #000; padding: 18px 35px; 
+    border-radius: 12px; text-decoration: none; font-weight: 900; 
+    display: inline-block; transition: 0.3s; text-align: center; border: none;
+}
+.btn-secondary { 
+    border: 2px solid var(--primary); color: var(--primary); padding: 16px 35px; 
+    border-radius: 12px; text-decoration: none; font-weight: 900; 
+    display: inline-block; transition: 0.3s; text-align: center;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+
+/* --- CARDS COM ZOOM --- */
+section { padding: 100px 0; }
+.section-title { text-align: center; color: #000; font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; }
+.section-subtitle { text-align: center; max-width: 800px; margin: 0 auto 50px; opacity: 0.9; color: #333; }
+
+.unified-column { display: flex; flex-direction: column; gap: 15px; max-width: 800px; margin: 0 auto; }
+.unified-card { 
+    background: #ffffff; padding: 25px 30px; border-radius: 12px; 
+    display: flex; align-items: center; gap: 20px; border: 1px solid #eee; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #333;
+}
+.unified-card:hover { transform: scale(1.03); border-color: var(--primary); }
+
+.card-red { border-left: 6px solid #ff4d4d; }
+.card-gold { border-left: 6px solid var(--primary); }
+
+/* --- CARDS PREMIUM (MÉTODO E MENTORIA) --- */
+.mentoria-premium-card { 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    text-align: center !important; 
+    margin: 60px auto 0; 
+    padding: 40px; 
+    border: 2px solid var(--primary); 
+    border-radius: 20px; 
+    background: #fff; 
+    width: 100%;
+    max-width: 900px;
+}
+
+.highlight-tag {
+    background: var(--primary);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* --- CENTRALIZAÇÃO DEFINITIVA (DÚVIDAS) --- */
+.cta-simple-box { 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    text-align: center !important; 
+    margin: 60px auto 0; 
+    padding: 40px; 
+    border: 2px solid var(--primary); 
+    border-radius: 20px; 
+    background: #fff; 
+    width: 100%;
+    max-width: 900px;
+}
+
+/* --- BOTÃO WHATSAPP VERDE CENTRALIZADO --- */
+.btn-wa-large { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: #25d366 !important; 
+    color: #fff !important; 
+    padding: 18px 40px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 800; 
+    margin: 25px auto 0; 
+    transition: 0.3s;
+    width: fit-content;
+}
+
+/* --- LIMPEZA DA MENTORIA (SEM PONTOS) --- */
+.mentoria-bullets { 
+    list-style: none !important; 
+    padding: 0 !important; 
+    margin: 30px auto !important; 
+}
+.mentoria-bullets li { 
+    margin-bottom: 15px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    list-style-type: none !important;
+}
+
+/* --- EBOOK E SOBRE --- */
+.ebook-grid { display: grid; gap: 50px; align-items: center; grid-template-columns: 1fr 1fr; }
+.ebook-img { width: 100%; border-radius: 20px; max-width: 400px; display: block; margin: 0 auto; }
+.price-container { margin: 25px 0; }
+.old-price { text-decoration: line-through; color: #888; display: block; }
+.new-price { font-size: 4rem; font-weight: 900; color: #000; display: block; line-height: 1; }
+
+.author-section { background: #fff; color: #111; padding: 80px 0; border-top: 1px solid #eee; }
+.author-grid { display: grid; grid-template-columns: 350px 1fr; gap: 60px; align-items: center; }
+.author-photo { width: 100%; max-width: 350px; border-radius: 20px; display: block; margin: 0 auto; border: 1px solid #eee; }
+.author-info p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; color: #333; }
+
+/* --- FOOTER (CORREÇÃO DAS LETRAS AZUIS) --- */
+footer { padding: 60px 0; background: #111; text-align: center; border-top: 1px solid #eee; }
+footer .container { display: flex; flex-direction: column; align-items: center; }
+footer a, footer a:visited, footer a:active { 
+    color: #ffffff !important; 
+    text-decoration: underline !important; 
+    -webkit-text-fill-color: #ffffff !important;
+    transition: 0.3s; 
+}
+footer a:hover { color: var(--primary) !important; }
+
+/* --- WHATSAPP FLUTUANTE --- */
+.whatsapp-float { 
+    position: fixed; bottom: 30px; right: 30px; 
+    background-color: #25d366; width: 60px; height: 60px; 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+    z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+}
+.whatsapp-float img { width: 32px; height: 32px; object-fit: contain; }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 850px) {
+    nav { display: none; }
+    .hero-grid, .author-grid, .ebook-grid { grid-template-columns: 1fr !important; text-align: center; }
+    .hero-btns { justify-content: center; }
+    .btn-primary, .btn-secondary { width: 100%; }
+}
+
+/* --- ANIMAÇÕES E CORREÇÕES FINAIS --- */
+.pulse { animation: pulse-animation 2s infinite; }
+@keyframes pulse-animation {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+#duvidas, .cta-simple-box, section:last-of-type .container {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.btn-wa-large {
+    margin: 20px auto !important;
+    display: inline-flex !important;
+}
+
+/* --- ESTILO DO INSTAGRAM NO SOBRE (COLE NO FINAL DO ARQUIVO) --- */
+.insta-wrapper {
+    margin-top: 25px;
+}
+
+.custom-insta-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none !important; 
+    color: #333 !important; 
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background: #f0f0f0; 
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.custom-insta-link:hover {
+    background: #e0e0e0;
+    color: var(--primary) !important; 
+}
+
+.insta-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+/* Centraliza o botão do insta apenas no celular */
+@media (max-width: 850px) {
+    .insta-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}
