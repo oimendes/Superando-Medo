@@ -2,8 +2,8 @@
 :root {
     --primary: #D4AF37;
     --primary-hover: #B8860B;
-    --bg-dark: #f9f9f9;
-    --bg-light: #ffffff;
+    --bg-dark: #F2F2F2;
+    --bg-light: #FAFAFA;
     --text-white: #111111;
     --text-muted: #555555;
     --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
@@ -14,11 +14,14 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { 
-    background: var(--bg-light); 
+    /* Cria o degradê suave entre o branco gelo e o cinza claro */
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-dark) 100%);
+    background-attachment: fixed; /* Mantém o degradê estático ao rolar */
+    
+    /* Mantenha o restante das suas propriedades */
     color: var(--text-white); 
     font-family: 'Inter', sans-serif; 
     line-height: 1.6;
-    background-attachment: fixed;
 }
 .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
