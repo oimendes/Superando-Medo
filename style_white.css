@@ -1,20 +1,20 @@
 /* --- FUNDAMENTOS --- */
 :root {
-    --primary: #D4AF37;
+    --primary: #D4AF37; /* Dourado Premium */
     --primary-hover: #B8860B;
-    --bg-dark: #f9f9f9;
+    --bg-dark: #f8f8f8; /* Cinza bem claro para seções de contraste */
     --bg-light: #ffffff;
-    --text-white: #111111;
+    --text-white: #111111; /* Preto suave para texto no fundo branco */
     --text-muted: #555555;
     --gold-gradient: linear-gradient(180deg, #FFD700 0%, #D4AF37 100%);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra suave para o tema branco */
     --border-gold-soft: rgba(212, 175, 55, 0.2);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { 
-    background: var(--bg-light); 
+    background: var(--bg-light); /* Fundo branco puro */
     color: var(--text-white); 
     font-family: 'Inter', sans-serif; 
     line-height: 1.6;
@@ -25,10 +25,10 @@ body {
 /* --- HEADER --- */
 header { 
     padding: 20px 0; 
-    background: #ffffff; 
+    background: #ffffff; /* Fundo do header branco */
     backdrop-filter: blur(10px); 
     position: sticky; top: 0; z-index: 1000; 
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05); 
 }
 header .container { display: flex; justify-content: space-between; align-items: center; }
 .logo-text { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.5px; }
@@ -70,7 +70,7 @@ nav ul li a:hover { color: var(--primary); }
 
 /* --- SEÇÕES --- */
 section { padding: 80px 0; }
-.bg-dark { background-color: var(--bg-dark); }
+.bg-dark { background-color: var(--bg-dark); } /* Usando o cinza bem claro */
 .section-title { text-align: center; font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; }
 .section-subtitle { text-align: center; max-width: 700px; margin: 0 auto 50px; color: var(--text-muted); }
 
@@ -81,6 +81,7 @@ section { padding: 80px 0; }
     display: flex; align-items: center; gap: 20px; 
     box-shadow: var(--card-shadow); 
     transition: 0.3s;
+    border: 1px solid transparent;
 }
 .unified-card:hover { transform: translateY(-5px); border-color: var(--primary); background: #fffdf0; }
 .card-red { border-left: 5px solid #ff4d4d; }
@@ -107,7 +108,7 @@ section { padding: 80px 0; }
 .author-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
 .author-photo { width: 100%; max-width: 350px; height: auto; border-radius: 20px; box-shadow: var(--card-shadow); display: block; margin: 0 auto; }
 
-/* --- FOOTER --- */
+/* --- FOOTER (Cor branca nos links sublinhados mantida) --- */
 footer { background: #111; color: #fff !important; padding: 50px 0; text-align: center; }
 .footer-links a, .footer-links a:visited { 
     color: #ffffff !important; 
@@ -115,7 +116,7 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
 }
 .footer-links a:hover { color: var(--primary) !important; }
 
-/* --- WHATSAPP --- */
+/* --- WHATSAPP (Original VERDE preservado) --- */
 .whatsapp-float { 
     position: fixed; bottom: 20px; right: 20px; 
     background: #25d366; width: 60px; height: 60px; 
@@ -124,7 +125,7 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
 }
 .whatsapp-float img { width: 35px; }
 
-/* --- MOBILE --- */
+/* --- MOBILE (RESTAURADO COMPLETO) --- */
 @media (max-width: 850px) {
     nav { display: none; }
     .hero-grid, .author-grid, .ebook-grid { grid-template-columns: 1fr !important; text-align: center; }
@@ -134,7 +135,7 @@ footer { background: #111; color: #fff !important; padding: 50px 0; text-align: 
     .author-photo { max-width: 280px; }
 }
 
-/* --- ANIMAÇÕES E CORREÇÕES FINAIS --- */
+/* --- ANIMAÇÕES E CORREÇÕES FINAIS (RESTAURADO) --- */
 .pulse { animation: pulse-animation 2s infinite; }
 @keyframes pulse-animation {
     0%, 100% { transform: scale(1); }
@@ -170,7 +171,7 @@ section:last-of-type .container {
     display: inline-flex !important;
 }
 
-/* --- ESTILO DO INSTAGRAM NO SOBRE (COLE NO FINAL DO ARQUIVO) --- */
+/* --- ESTILO DO INSTAGRAM NO SOBRE (RESTAURADO) --- */
 .insta-wrapper {
     margin-top: 25px;
 }
