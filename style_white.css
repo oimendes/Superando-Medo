@@ -343,67 +343,65 @@ footer a:hover {
         padding: 30px 20px !important; /* Diminui o respiro interno para caber melhor na tela do celular */
     }
 }
-/* --- NOVO AJUSTE VISUAL: FOTO NA ESQUERDA + ESTILO EBOOK --- */
+/* --- AJUSTE FINAL MÉTODO: ALINHAMENTO E BORDAS --- */
 
 .metodo-new-layout {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Dá respiro entre foto e texto */
-    gap: 40px;
+    gap: 0; /* Vamos controlar o espaço via padding interno */
     margin-top: 50px;
-    flex-wrap: wrap; /* Para o celular */
+    flex-wrap: wrap;
 }
 
-/* Regra específica para a foto do banner na esquerda */
-.metodo-banner-left {
+.metodo-image-side {
     flex: 1;
-    max-width: 480px; /* Alinha com a largura do ebook */
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra elegante */
-    order: 1; /* Foto na esquerda */
+    display: flex;
+    justify-content: center;
 }
 
-/* Regra para o conteúdo de texto do lado direito */
+.metodo-banner-left {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 20px; /* Bordas arredondadas como no Ebook */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
 .metodo-content-right {
     flex: 1;
-    max-width: 500px; /* Alinha com o texto do ebook */
-    text-align: left; /* Garante alinhamento à esquerda */
-    order: 2; /* Texto na direita */
+    display: flex;
+    justify-content: flex-start;
 }
 
-/* Ajustes de tipografia fora da caixa */
-.metodo-content-right .badge {
-    margin-bottom: 15px;
+/* Esse wrapper garante que o texto não cole no canto e alinhe com o de cima */
+.metodo-text-wrapper {
+    padding-left: 50px; /* Cria o recuo para alinhar com o ebook */
+    max-width: 550px;
 }
 
 .metodo-content-right h3 {
     font-size: 1.8rem;
     font-weight: 900;
-    margin-bottom: 20px;
+    margin: 15px 0;
+    color: #000;
 }
 
-.metodo-content-right p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #444;
-    margin-bottom: 25px;
-}
-
-/* --- RESPONSIVIDADE (CELULAR) --- */
+/* Ajuste para celular */
 @media (max-width: 950px) {
     .metodo-new-layout {
-        flex-direction: column; /* Coloca a imagem embaixo do texto no celular */
-        gap: 20px;
+        flex-direction: column;
         text-align: center;
     }
     
-    .metodo-banner-left {
-        max-width: 100%; /* Imagem menor no celular */
+    .metodo-text-wrapper {
+        padding-left: 0; /* Remove o recuo no celular para centralizar */
+        margin-top: 30px;
     }
-
+    
+    .metodo-image-side {
+        order: 2; /* Foto embaixo no celular */
+    }
+    
     .metodo-content-right {
-        max-width: 100%; /* Card ocupa largura total no celular */
-        text-align: center;
+        order: 1; /* Texto em cima no celular */
     }
 }
