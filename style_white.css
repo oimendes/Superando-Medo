@@ -343,60 +343,67 @@ footer a:hover {
         padding: 30px 20px !important; /* Diminui o respiro interno para caber melhor na tela do celular */
     }
 }
-/* --- AJUSTE VISUAL: FOTO AO LADO DO MÉTODO --- */
+/* --- NOVO AJUSTE VISUAL: FOTO NA ESQUERDA + ESTILO EBOOK --- */
 
-.metodo-flex-container {
+.metodo-new-layout {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 40px; /* Espaço entre o card e a foto */
-    flex-wrap: wrap; /* Faz a foto ir para baixo no celular */
-    margin-top: 40px;
+    justify-content: space-between; /* Dá respiro entre foto e texto */
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap; /* Para o celular */
 }
 
-.metodo-card-ajuste {
+/* Regra específica para a foto do banner na esquerda */
+.metodo-banner-left {
     flex: 1;
-    max-width: 550px; /* Garante que o card não estique demais */
-    margin: 0 !important; /* Remove margens que podem desalinhá-lo */
-}
-
-.metodo-banner-img {
-    flex: 1;
-    max-width: 500px; /* Tamanho ideal para a foto do Franco */
+    max-width: 480px; /* Alinha com a largura do ebook */
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Sombra para dar profundidade */
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra elegante */
+    order: 1; /* Foto na esquerda */
 }
 
-/* --- AJUSTE DO SOBRE (SEM FOTO) --- */
-
-.author-content-only {
-    max-width: 800px; /* Deixa o texto em uma largura boa para leitura */
-    margin: 0 auto;
-    text-align: center;
+/* Regra para o conteúdo de texto do lado direito */
+.metodo-content-right {
+    flex: 1;
+    max-width: 500px; /* Alinha com o texto do ebook */
+    text-align: left; /* Garante alinhamento à esquerda */
+    order: 2; /* Texto na direita */
 }
 
-.author-content-only .author-info p {
+/* Ajustes de tipografia fora da caixa */
+.metodo-content-right .badge {
+    margin-bottom: 15px;
+}
+
+.metodo-content-right h3 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.metodo-content-right p {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.7;
     color: #444;
+    margin-bottom: 25px;
 }
 
 /* --- RESPONSIVIDADE (CELULAR) --- */
-
-@media (max-width: 850px) {
-    .metodo-flex-container {
-        flex-direction: column; /* No celular, um embaixo do outro */
+@media (max-width: 950px) {
+    .metodo-new-layout {
+        flex-direction: column; /* Coloca a imagem embaixo do texto no celular */
         gap: 20px;
-    }
-
-    .metodo-banner-img {
-        max-width: 100%; /* Foto ocupa a largura total da tela no celular */
-        order: 2; /* Garante que a foto fique depois do preço */
+        text-align: center;
     }
     
-    .metodo-card-ajuste {
-        order: 1;
+    .metodo-banner-left {
+        max-width: 100%; /* Imagem menor no celular */
+    }
+
+    .metodo-content-right {
+        max-width: 100%; /* Card ocupa largura total no celular */
+        text-align: center;
     }
 }
